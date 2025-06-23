@@ -1,0 +1,16 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.box{
+  display: flex;
+color: aqua;
+  background-color: black;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 1rem auto;
+  width: fit-content;
+}
