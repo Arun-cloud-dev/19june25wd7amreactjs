@@ -1,9 +1,18 @@
+import Home from "./components/Home.jsx";
+import About from "./components/About.jsx";
+import Contact from "./components/Contact.jsx";
+import Dashboard from "./components/Dashboard.jsx";
+import Profile from "./components/Profile.jsx";
+import Settings from "./components/Settings.jsx";
+
+
 import { CORE_CONCEPTS } from "./data.js";
 import Header from "./components/Header.jsx";
 import CoreConcept from "./components/CoreConcept.jsx";
 import TabButton from "./components/TabButton.jsx";
 import { useState } from "react";
 import { EXAMPLES } from "./data.js";
+import { Link, Routes, Route } from "react-router-dom";
 
 
 
@@ -36,14 +45,31 @@ function App() {
 
   return (
     <div>
+      <nav>
+        <Link to="/">Home</Link> | <Link to="/about">About</Link>|{" "}
+        <Link to="/contact">Contact</Link> |{" "}
+        <Link to="/dashboard">Dashboard</Link>
+      </nav>
+
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="profile" element={<Profile />} />
+          <Route path="settings" element={<Settings />} />
+        </Route>
+      </Routes>
+
       <Header />
       <main>
         <section id="core-concepts">
           <h2>Core Concepts</h2>
 
           <ul>
-            {CORE_CONCEPTS.map((conceptItem)=> < CoreConcept key={conceptItem.title} {...conceptItem} />  )}
-
+            {CORE_CONCEPTS.map((conceptItem) => (
+              <CoreConcept key={conceptItem.title} {...conceptItem} />
+            ))}
           </ul>
         </section>
         <section id="examples">
