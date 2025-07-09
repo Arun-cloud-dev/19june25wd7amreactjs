@@ -4,6 +4,9 @@ import Contact from "./components/Contact.jsx";
 import Dashboard from "./components/Dashboard.jsx";
 import Profile from "./components/Profile.jsx";
 import Settings from "./components/Settings.jsx";
+import Followers from "./components/Followers.jsx";
+
+
 
 
 import { CORE_CONCEPTS } from "./data.js";
@@ -45,6 +48,9 @@ function App() {
 
   return (
     <div>
+      <Followers/>
+
+
       <nav>
         <Link to="/">Home</Link> | <Link to="/about">About</Link>|{" "}
         <Link to="/contact">Contact</Link> |{" "}
