@@ -1,4 +1,5 @@
 import reactImg from "../assets/react-core-concepts.png";
+import Counter from "./Counter";
 import "./Header.css"
 
 
@@ -20,6 +21,7 @@ export default function Header() {
         {description} React concepts you will need for almost any app you are
         going to build!
       </p>
+      <Counter />
     </header>
   );
 }
